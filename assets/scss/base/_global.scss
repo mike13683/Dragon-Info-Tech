@@ -1,0 +1,49 @@
+//Global classes/id/selectors
+//
+@import 'vendors/juice';
+
+//googlefont
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto');
+
+body{
+  height: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+//fixes menu
+@include media-breakpoint-down(md){
+  html{
+    overflow-x: hidden;
+  }
+}
+
+h1,h2,h3,h4,h5{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.main-heading{
+  font-family: 'Montserrat', sans-serif;
+  font-weight:700;
+}
+
+.secondary-heading{
+  font-family: 'Montserrat', sans-serif;
+  font-weight:400;
+}
+
+//body bg colour
+$body-colour: #EBECE6;
+
+//floats in content from bottom to top hide
+.js-fade-up{
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s;
+}
+
+//floats in content from bottom to top show
+.js-fade-up.fade-up{
+  opacity: 1;
+  transform: translateY(0px);
+}

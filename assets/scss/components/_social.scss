@@ -1,0 +1,19 @@
+/* SOCIAL BUTTONS
+-------------------------------------------------*/
+
+//Contacat Page
+.social-box{
+  border:3px solid rgba(0,0,0,0.125);
+
+  //hover font awsome icon colour change
+  .fab{
+    color: #212529 !important;
+  }
+
+  //hover font awsome icon colour change
+    .fab:hover {
+      color: $primary !important;
+      text-decoration: none;
+    }
+}
+

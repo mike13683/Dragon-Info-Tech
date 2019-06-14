@@ -1,0 +1,112 @@
+<!--global outlay-->
+<header>
+    <div class="head-wrapper">
+        <!--branding-->
+        <a href="/" class="brand">
+            <img src="{{site.url}}/assets/img/Logo-DragonInfoTech.png" alt="dragoninfotech logo" class="img-responsive">
+        </a>
+    </div>
+
+    <!--page title-->
+    <div class="page-title d-none d-md-block">
+        <p>{{page.page-title}}</p>
+    </div>
+
+    <!--menu text box-->
+    <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-right offcanvas" role="navigation">
+        <div class="myNavmenu">
+            <div class="myNavmenu-inner">
+
+                <img src="{{site.url}}/assets/img/Logo-DragonInfoTech.png" alt="dragoninfotech logo" class=" brand-image">
+                <ul class="nav navmenu-nav list-group">
+
+                    {% if page.active == "home" %}
+                    <li class="active list-group-item"><a href="#">Home.</a></li>
+                    {% else %}
+                    <li><a href="../index.html ">Home.</a></li>
+                    {% endif %}
+
+                    {% if page.active == "about" %}
+                    <li class="active list-group-item"><a href="#">About.</a></li>
+                    {% else %}
+                    <li><a href="../about.html ">About.</a></li>
+                    {% endif %}
+
+                    {% if page.active == "our-work" %}
+                    <li class="active list-group-item"><a href="#">Our Work.</a></li>
+                    {% else %}
+                    <li><a href="../our-work.html">Our Work.</a></li>
+                    {% endif %}
+
+                    {% if page.active == "#" %}
+                    <li class="active list-group-item"><a href="#">Blog.</a></li>
+                    {% else %}
+                    <li><a href="../blog/">Blog.</a></li>
+                    {% endif %}
+
+                    {% if page.active == "contact" %}
+                    <li class="active list-group-item"><a href="#">Say Hello.</a></li>
+                    {% else %}
+                    <li><a href="../contact.html">Say Hello.</a></li>
+                    {% endif %}
+
+                </ul>
+
+                <div class="contact-details">
+                    <address>
+                        <span class="d-none d-md-block">
+                            <p class="mb-0">Stadium Close</p>
+                            <p class="mb-0">Penarth Road</p>
+                            <p class="mb-0">Cardiff</p>
+                            <p class="mb-0">CF11 8TS</p>
+                        </span>
+
+                        <a href="maitohi@dragoninfotech.com">hi@dragoninfotech.com</a>
+                        <div class="menu-social-buttons">
+                            <ul class=" list-inline">
+                                <li class="list-inline-item"><a href="https://www.facebook.com/dragonsigns/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                <li class="list-inline-item"><a href="https://twitter.com/DragonInfoTech" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                <li class="list-inline-item"><a href="https://www.linkedin.com/company/dragon-info-tech" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                                <li class="list-inline-item"><a href="https://instagram.com/robdragonit/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+
+                    </address>
+                </div> <!--contact details-->
+
+            </div>
+        </div>
+    </nav>
+
+    <!--menu text box-->
+    <div class="menu hvr-bounce-to-left"  class="navbar-toggle " data-toggle="offcanvas" data-target=".navmenu" data-canvas="body">
+            <span class="menu-inner">
+                <p>ME</p>
+                    <div class="menu-text-spacing"></div>
+                <p>NU</p>
+            </span>
+    </div>
+
+    <!--left side bar-->
+    <div class="left-sidebar-wrapper d-none d-md-block">
+        <a href="mailto:hi@dragoninfotech.com">
+            <p>S</p>
+            <p>a</p>
+            <p class="pb-3">y</p>
+            <p>H</p>
+            <p>i</p>
+        </a>
+    </div>
+
+    <!--right side bar-->
+    <div class="right-sidebar-wrapper d-none d-md-block">
+        <div class="sidebar-social-buttons pr-5">
+            <ul class="list-inline">
+                <li><a class="list-group-item" href="https://www.facebook.com/dragonsigns/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a class="list-group-item" href="https://twitter.com/DragonInfoTech" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                <li><a class="list-group-item" href="https://www.linkedin.com/company/dragon-info-tech" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                <li><a class="list-group-item" href="https://instagram.com/robdragonit/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</header>

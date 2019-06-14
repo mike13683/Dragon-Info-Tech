@@ -1,0 +1,23 @@
+/* LEFT SIDE BAR
+-------------------------------------------------*/
+
+.left-sidebar-wrapper{
+  a{
+    left:50%;
+    top:40%;
+    transform: translateX(-50%) translateY(-40%);
+    position: absolute;
+    text-align: center;
+
+    &:hover  {
+      text-decoration: none;
+    }
+  }
+}
+
+//vertical text spacing decrease
+.left-sidebar-wrapper p {
+  font-size: rem-calc(26px);
+  @extend .main-heading;
+  margin: -6px 0 !important;
+}

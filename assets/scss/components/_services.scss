@@ -1,0 +1,100 @@
+//services component
+//services first container - number of section
+//mobile spacing
+.services{
+  padding: 155px 0 100px;
+
+  //large screen spacing
+  @include media-breakpoint-up(sm){
+    padding: 300px 0;
+  }
+
+  //edit number
+  .services-header p{
+    color: #d7d7d7;
+    letter-spacing: 3px;
+    text-align: center;
+    @extend .main-heading;
+    font-size: rem-calc(220px);
+
+    //tablet - increase font size
+    @include media-breakpoint-up(md){
+      font-size: rem-calc(120px);
+    }
+
+    //laptop - increase font size
+    @include media-breakpoint-up(lg){
+      font-size: rem-calc(250px);
+    }
+
+    //desktop - increase font size
+    @media all and (min-width: 1400px){
+      font-size: rem-calc(360px);
+    }
+  }
+}
+
+//services second container - title / sub title
+//right text box - idea
+.services__content{
+  @include centerer;
+  top:45% !important;
+
+
+  //moves content box to the right
+  &--right{
+    right:0 !important;
+    text-align: right;
+  }
+
+  //mobile - center / edit text
+  .services__header h2 {
+    @extend .main-heading;
+    color: $primary;
+    font-size: rem-calc(45px);
+
+    //tablet - increase font size
+    @include media-breakpoint-up(md){
+      font-size: rem-calc(60px);
+    }
+
+    //laptop - increase font size
+    @include media-breakpoint-up(lg){
+      font-size: rem-calc(110px);
+    }
+
+    //desktop - increase font size
+    @media all and (min-width: 1400px) and (max-width: 1920px){
+      font-size: rem-calc(160px);
+    }
+  }
+
+  //increase sub heading text and colour change to primary
+  .services__sub-header h3{
+    @extend .secondary-heading;
+    font-size: rem-calc(35px);
+    margin-left:5px;
+
+    //tablet - font size
+    @include media-breakpoint-up(md){
+      font-size: rem-calc(16px);
+    }
+
+    //laptop - font size
+    @include media-breakpoint-up(lg){
+      font-size: rem-calc(24px);
+    }
+
+    //desktop -
+    @media all and (min-width: 1400px) and (max-width: 1920px){
+      font-size: rem-calc(35px);
+      margin-left:10px;
+    }
+  }
+
+  //change first letter colour to primary
+  .text-primary-large{
+    color:$primary;
+    @extend .main-heading;
+  }
+}

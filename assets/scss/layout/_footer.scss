@@ -1,0 +1,32 @@
+/* FOOTER
+-------------------------------------------------*/
+#main-footer{
+  height:45px;
+  position:fixed;
+  bottom:0;
+  width:100%;
+  z-index: 1000;
+
+  //decrease menu items text size
+  .navmenu-nav li a{
+    font-size:rem-calc(15px);
+text-align: center;
+    padding-right:4px;
+
+    @include media-breakpoint-up(lg){
+      font-size:rem-calc(24px);
+    }
+
+    //desktop - increase spacing between menu items
+    @include media-breakpoint-up(md){
+      padding-right:15px;
+    }
+  }
+
+  //removes spacing on active item in footer
+  .list-inline-item:not(:last-child) {
+    margin-right: 0;
+  }
+}
+
+

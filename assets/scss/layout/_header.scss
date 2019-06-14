@@ -1,0 +1,77 @@
+/* HEADER
+-------------------------------------------------*/
+
+@import 'base/global';
+
+//top spacing
+.head-wrapper{
+  height:45px;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index: 1000;
+
+  //top spacing brand logo move right
+  a img{
+    left:20px;
+    top:5px;
+    position: relative;
+
+    //desktop up
+    @include media-breakpoint-up(md){
+      left:40px;
+    }
+  }
+}
+
+//page name
+.page-title{
+  height:45px;
+  position:fixed;
+  top:5px;
+  left:50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+
+  p{
+    font-size: 20px;
+    @extend .main-heading;
+  }
+}
+
+//left and right spacing
+.left-sidebar-wrapper,.right-sidebar-wrapper{
+  width:45px;
+  top: 45px;
+  bottom: 0;
+  position: fixed;
+}
+
+//left and right height 100%
+.left-sidebar-wrapper,.right-sidebar-wrapper{
+  height:100%;
+}
+
+.body-wrapper{
+  margin:45px 45px;
+  padding: 0;
+  position: relative;
+  background-color: $body-colour;
+  height: 100%;
+
+  //remove spacing on mobile
+  @include media-breakpoint-down(sm){
+    margin:45px 0;
+  }
+}
+
+//background colour set to light on all areas
+.left-sidebar-wrapper,.right-sidebar-wrapper,.head-wrapper,#main-footer{
+  background-color:#fff;
+  //fixes homepage intro overlapping
+  z-index:1001;
+}
+
+
+

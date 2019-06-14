@@ -1,0 +1,35 @@
+//feature component
+//mobile padding
+.feature{
+  position: relative;
+  padding: 50px 0;
+
+  //desktop padding
+  @include media-breakpoint-up(lg){
+    padding: 400px 0;
+  }
+
+  //mobile reduce image size
+  .feature__content{
+    img{
+      width: 100%;
+      position: relative;
+      margin: 0 auto;
+      display: block;
+    }
+
+    //heading text edit
+    h4{
+      font-size: rem-calc(26px);
+      @extend .main-heading;
+    }
+  }
+
+  //desktop image increase
+  @include media-breakpoint-up(lg){
+    .feature__content{
+      width: 100%;
+      @include centerer;
+    }
+  }
+}

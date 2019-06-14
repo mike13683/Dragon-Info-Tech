@@ -1,0 +1,711 @@
+---
+---
+
+@import 'bootstrap-override';
+@import 'bootstrap/bootstrap';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/left-side-bar';
+@import 'layout/right-side-bar';
+@import 'layout/nav';
+@import 'components/social';
+@import 'components/_feature';
+@import 'components/_services';
+@import 'base/global';
+@import 'base/mixins';
+@import 'vendors/juice';
+
+/*
+ * Website Name - Dragon Info Tech
+ * Date - 15/02/19
+ * Designed by Michael Owens / Dragon Info Tech
+ */
+
+//HOMEPAGE
+//intro
+
+//bg colour default - change with gsap
+.introBgPrimary{
+  background-color:#DDDDE4;
+  transform-origin: bottom;
+  transform: scaleY(0);
+  z-index: 1000;
+}
+
+//bg colour default - change with gsap
+.introBgSecondary{
+  background-color:#DDDDE4;
+  transform-origin: top;
+  transform: scaleY(0);
+  z-index: 0;
+}
+
+.intro{
+  height: calc(100vh - 90px);
+  color: #fff;
+  position: relative;
+}
+
+//intro header main text position mobile
+  #intro .intro__content{
+    top:25%;
+    left:50%;
+    width: 90%;
+    transform: translateX(-50%) translateY(-40%);
+    position: absolute;
+    z-index: 1000;
+
+    //intro header main text position ipad up
+    @include media-breakpoint-up(md){
+      @include centerer;
+      top:40% !important;
+      left:50% !important;
+    }
+
+    //intro header main text position desktop
+    @media all and (min-width: 1400px) and (max-width: 1920px){
+      left:85% !important;
+    }
+  }
+
+//intro header main text edit
+.intro__header{
+  //header font size mobile
+  p{
+    @extend .main-heading;
+    margin-bottom:-10px;
+    font-size: rem-calc(60px);
+
+    //edit text large screen
+    @include media-breakpoint-up(md){
+      font-size: rem-calc(110px);
+      margin-bottom:-30px;
+    }
+  }
+}
+@-webkit-keyframes NAME-YOUR-ANIMATION {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+#box {
+  -webkit-animation: NAME-YOUR-ANIMATION 5s infinite; /* Safari 4+ */
+  -moz-animation:    NAME-YOUR-ANIMATION 5s infinite; /* Fx 5+ */
+  -o-animation:      NAME-YOUR-ANIMATION 5s infinite; /* Opera 12+ */
+  animation:         NAME-YOUR-ANIMATION 5s infinite; /* IE 10+, Fx 29+ */
+}
+//intro header secondary text position mobile
+.intro__body{
+  position: absolute;
+  left:65%;
+  top:45%;
+  transform: translateX(-50%)translateY(-50%);
+
+
+  //mobile - move intro__body down and increase text
+  @include media-breakpoint-down(md){
+    left:50%;
+    top:120%;
+
+    h2{
+      font-size: rem-calc(30px) !important;
+    }
+  }
+
+  //intro header main text position desktop
+  @media all and (min-width: 1400px) and (max-width: 1920px){
+    @include centerer;
+    top:50% !important;;
+    left:65% !important;
+  }
+
+  span{
+    font-size: rem-calc(28px);
+    @extend .main-heading;
+  }
+
+  //sub heading text edit
+  h2{
+    font-size: rem-calc(18px);
+    @extend .secondary-heading;
+
+    //desktop text size edit
+    @include media-breakpoint-up(lg){
+      font-size: rem-calc(26px);
+    }
+  }
+}
+
+//project
+//removes padding on columns
+#our-work [class*="col"]{
+  padding: 0;
+}
+
+//text box
+.our-work-text{
+  height:100px;
+  position: relative;
+  border: 5px solid #e6e6d4;
+  font-size:rem-calc(18px);
+
+  //removes styling on project box
+  a{
+    text-decoration: none;
+    font-size:rem-calc(18px);
+    color:#fff;
+  }
+
+  p{
+    @extend .secondary-heading;
+    font-size: rem-calc(30);
+
+    //desktop font size increase
+    @include media-breakpoint-up(lg){
+      font-size:rem-calc(40px);
+    }
+  }
+
+  .our-work-text__content{
+    @include centerer;
+    text-align: center;
+  }
+
+  //removes padding on columns
+  #our-work [class*="col"]{
+    padding: 0;
+  }
+}
+
+//small image
+.our-work-media-small{
+  height:500px;
+  border: 5px solid #e6e6d4
+}
+
+//large image
+.our-work-media-large{
+  height:600px;
+  border-top: 5px solid #e6e6d4;
+  border-right: 2px solid #e6e6d4;
+  border-bottom: 5px solid #e6e6d4;
+  border-left: 2px solid #e6e6d4;
+}
+
+//tp image
+.our-work-media-small--one{
+  background: url("{{site.url}}/assets/img/our-workc1.gif") center center no-repeat;
+  background-size: cover;
+  //transition: all 900ms;
+  //
+  ////tp image hover
+  //&:hover{
+  //  background: url("{{site.url}}/assets/img/our-workc2.png") center center no-repeat;
+  //  background-size: cover;
+  //}
+}
+
+//calzaghe image
+.our-work-media-large{
+  background: url("{{site.url}}/assets/img/our-workb2.gif") center center no-repeat;
+  background-size: cover;
+  //transition: all 900ms;
+  //
+  ////calzaghe image hover
+  //&:hover{
+  //  background: url("{{site.url}}/assets/img/our-workb1.png") center center no-repeat;
+  //  background-size: cover;
+  //}
+}
+
+//windsor fruit store image
+.our-work-media-small--two{
+  background: url("{{site.url}}/assets/img/our-worka2.gif") center center no-repeat;
+  background-size: cover;
+  //transition: all 900ms;
+  //
+  ////windsor fruit store image hover
+  //&:hover{
+  //  background: url("{{site.url}}/assets/img/our-worka1.png") center center no-repeat;
+  //  background-size: cover;
+  //}
+}
+
+//section-01
+#section-01 .feature {
+  @include media-breakpoint-up(lg) {
+    padding:100px 0 850px;
+  }
+}
+
+//floats in content from left to right hide
+.js-fade-right{
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 1s;
+  overflow-x: hidden;
+}
+
+//floats in content from left to right show
+.js-fade-right.fade-right{
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+//section-02
+////homepage - ipad float in from right hide
+.js-ipad{
+  opacity: 0;
+  transition: all 1s;
+  transform:translateX(300px);
+  overflow:hidden;
+}
+
+//homepage - ipad float in from right show
+.js-ipad.fade-in-ipad{
+  opacity: 1;
+  transform:translateX(0px);
+}
+
+//section-03
+//section padding - large screen
+#section-03 .feature{
+  @include media-breakpoint-up(lg){
+    padding: 425px 0;
+  }
+
+  //laptop - move text box over image
+  @include media-breakpoint-up(md){
+    .feature__content--move-up{
+      top:30% !important;
+      left:-10% !important;
+      width:100% !important;
+      background-color: #fff;
+    }
+  }
+
+  //desktop move text box over image
+  @media all and (min-width: 1400px) and (max-width: 1920px){
+    .feature__content--move-up{
+      top:25% !important;
+    }
+  }
+}
+
+//section-04
+//Homepage - design section - mobile image resize
+.feature__content--image-resize img{
+  width: 70% !important;
+
+  @include media-breakpoint-up(lg){
+    width: 45% !important;
+  }
+}
+
+//homepage - ipad float in from right hide
+.js-fade-left{
+  opacity: 0;
+  transition: all 1s;
+  transform:translateX(20px);
+  overflow-x: hidden;
+}
+
+//homepage - ipad float in from right show
+.js-fade-left.fade-left{
+  opacity: 1;
+  transform:translateX(0px);
+}
+
+//section-05
+//bg image for section 5
+.feature--bg-section-05{
+  background: url("{{site.url}}/assets/img/homepage-strategy.jpg") center center;
+  background-size: cover;
+
+  //remove bg on mobile
+  @include media-breakpoint-down(sm){
+    background: none;
+  }
+}
+
+//mobile - bg image height
+#section-05 .feature{
+  padding: 50px 0;
+
+  //desktop - bg image height
+  @include media-breakpoint-up(md){
+    padding: 450px 0;
+  }
+
+  //desktop - center content box
+  @include media-breakpoint-up(md){
+    .feature-content{
+      position: absolute;
+      left:50%;
+      transform: translateX(-50%);
+      bottom: 0;
+      width: 60%;
+    }
+  }
+}
+
+//text increase
+#section-05 .feature__body p, a{
+  font-size: rem-calc(20px);
+}
+
+//heading text edit
+#section-05 .feature__body h4{
+  font-size: rem-calc(40px);
+  @extend .main-heading;
+}
+
+//feature text box bg colour change
+.feature-content--bg-colour{
+  background-color: $body-colour;
+}
+
+//home - section 5 - end point
+.js-feature{
+  transition: all 2s;
+  position: relative;
+  bottom:-100px !important;
+  opacity: 0;
+}
+
+//home - section 5 - start point
+.js-feature.feature-fade-up{
+  position: relative;
+  bottom:0px !important;
+  opacity: 1;
+}
+
+//ABOUT
+//bg colour change for about page
+.body-wrapper #about-page {
+  background-color: #2C3240;
+}
+
+//adds padding to about section
+//mobile
+.about-us{
+  padding: 50px 0;
+
+  //tablet
+  @include media-breakpoint-up(sm){
+    padding: 150px 0;
+  }
+
+  //desktop
+  @include media-breakpoint-up(lg){
+    padding: 450px 0;
+  }
+}
+
+.about-A{
+  position: relative;
+
+  //center content
+  .about-A-content{
+    @include media-breakpoint-up(lg){
+      @include centerer;
+    }
+  }
+
+  //about us title styling
+  h1{
+    font-size: rem-calc(75px);
+    @extend .main-heading;
+    text-align: center;
+    color:#fff;
+    z-index:10;
+
+    @include media-breakpoint-up(lg){
+      @include centerer;
+    }
+  }
+
+  //text box increase text size
+  p{
+    font-size:rem-calc(20px);
+  }
+
+  //capital "A" styling
+  .capital-A{
+    font-size: rem-calc(230px);
+    color: $primary;
+    @extend .secondary-heading;
+    z-index:-10;
+    position: absolute;
+    text-align: center;
+
+    @include media-breakpoint-up(lg){
+      @include centerer;
+    }
+  }
+}
+
+//dragon info tech text styling
+.dragon-text, .info-tech-text{
+  position: absolute;
+  color:darken(#2C3240,2%);
+  font-size: rem-calc(100px);
+  letter-spacing: 5px;
+  @extend .main-heading;
+}
+
+//dragon text
+.dragon-text{
+  top:5%;
+  left:0;
+}
+
+//info tech text
+.info-tech-text{
+  bottom:5%;
+  right:0;
+}
+
+//OUR WORK
+//add bg image to body
+@media screen and (min-width: 768px) {
+  .body-wrapper #our-work-page {
+    background: url("{{site.url}}/assets/img/our-work-bg.jpg") center center no-repeat fixed !important;
+    background-size: cover;
+  }
+}
+@media screen and (min-width: 768px) {
+  #our-work-page{
+    padding: 30px;
+  }
+}
+
+//adds gold border to container
+.gold-border{
+  border: #988454 2px solid;
+}
+
+//removes padding on the columns
+#our-work-page [class*="col"]{
+  padding: 0;
+}
+
+.our-work{
+  position: relative;
+  height:250px;
+  width:100%;
+  transition: all 1s;
+
+  @include media-breakpoint-up(md){
+    height:400px
+  }
+
+  //mobile - text box set to 100%
+  @include media-breakpoint-down(sm){
+    //centers image content and sets height of overlay
+    &__content{
+      @include centerer;
+      width:100% !important;
+    }
+  }
+
+  //centers image content and sets height of overlay
+  &__content{
+    @include centerer;
+    width:100% !important;
+    height:100%;
+  }
+
+  //first box text edit
+  .our-work__body-text-increase p{
+    font-size: rem-calc(20px);
+    @extend .secondary-heading;
+  }
+
+  //moves project and icon to top right corner
+  .our-work__header span{
+    top:0;
+    right:0;
+    height:50px;
+    position: absolute;
+  }
+
+  //moves "project" left to stop it overlapping the icon
+  .project-text-left{
+    right:47px !important;
+  }
+
+  h1{
+    @extend .main-heading;
+  }
+
+  //icon colour change and hover colour change
+  .fas{
+    color: $primary;
+
+    &:hover{
+      color: lighten($primary, 5%);
+    }
+  }
+
+  //site title text increase
+  h2{
+    font-size: rem-calc(20px);
+  }
+
+  //adds bg to our work when our-work_content hovered
+  &:hover .our-work__content{
+    background-color:rgba(0,0,0,0.4);
+  }
+
+  //moves site title to the bottom and left of container and hides it
+  &__body{
+    position: absolute;
+    bottom:0;
+    left:0;
+    opacity: 0 !important;
+    transition: all 1.8s;
+
+    //shows site title to the bottom and left of container on ipad and up
+    @include media-breakpoint-down(md){
+      opacity: 1 !important;
+    }
+  }
+
+  //shows site title on our work content hover
+  &:hover .our-work__body{
+    opacity: 1 !important;
+  }
+
+  //removes bg on first box hover and sets "projects" title width
+  .our-work__content--first{
+    background-color:transparent !important;
+
+    //projects title, set width of red container mobile
+    .our-work__header{
+      width: 100%;
+
+      //projects title, set width of red container desktop
+      @include media-breakpoint-up(lg){
+        width: 65%;
+      }
+    }
+  }
+}
+
+//our work page - floats in project image hide
+.js-fade-in{
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: all 1s;
+
+  //our work page - floats in project image show
+  .fade-in{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.our-work--bg-1 {
+  background: url("{{site.url}}/assets/img/projects-calzaghe.jpg") center center no-repeat;
+  background-size: cover;
+}
+
+.our-work--bg-2 {
+  background: url("{{site.url}}/assets/img/projects-concept.jpg") center center no-repeat;
+  background-size: cover;
+}
+
+.our-work--bg-3 {
+  background: url("{{site.url}}/assets/img/projects-windsor-fruit.jpg") center center no-repeat;
+  background-color: #fff;
+  background-size: cover;
+}
+
+.our-work--bg-4 {
+  background: url("{{site.url}}/assets/img/projects-dragon-signs.jpg") center center no-repeat;
+  background-size: cover;
+}
+
+.our-work--bg-5 {
+  background: url("{{site.url}}/assets/img/projects-travis-perkins.jpg") center center no-repeat;
+  background-size: cover;
+}
+
+.our-work--bg-6 {
+  background: url("{{site.url}}/assets/img/projects-cardiff-carpets.jpg") center center no-repeat;
+  background-size: cover;
+}
+
+.our-work--bg-7 {
+  background: url("{{site.url}}/assets/img/projects-ade-ward.jpg") center center no-repeat;
+  background-size: cover;
+}
+
+.our-work--bg-8 {
+  background: url("{{site.url}}/assets/img/projects-cardiff-greengrocer.jpg") center center no-repeat;
+  background-size: cover;
+}
+
+.our-work--bg-9 {
+  background: url("{{site.url}}/assets/img/projects-trees-cardiff.jpg") center center no-repeat;
+  background-size: cover;
+}
+
+.our-work--bg-10 {
+  background: url("{{site.url}}/assets/img/projects-startyourbsa.jpg") center center no-repeat;
+  background-size: cover;
+}
+
+//CONTACT
+//contact intro
+.contact-intro{
+  position: relative;
+
+  &__content{
+    @include centerer;
+  }
+
+  //text edit for "fancy a chat" and address
+  h1, p{
+    font-size: rem-calc(26px);
+    @extend .secondary-heading;
+  }
+}
+
+.contact-box{
+  position: relative;
+
+  &__content{
+    background-color: rgba(0,0,0,0.125);
+    position: absolute;
+    right:0;
+    top:50%;
+    transform: translateY(-50%);
+  }
+
+  &__body p{
+    font-size: rem-calc(26px);
+    @extend .secondary-heading;
+  }
+}
+//address box border left
+.my-border-left{
+  border-left:3px solid rgba(0,0,0,0.125);
+}
+
+//address box border right
+.my-border-right{
+  border-right:3px solid rgba(0,0,0,0.125);
+}
+
+.contact-map{
+  position: relative;
+  width:100%;
+}
+
+//.intro__header h1 p{
+//  opacity:0;
+//  transform: translateY(50px);
+//  position: relative;
+//}
