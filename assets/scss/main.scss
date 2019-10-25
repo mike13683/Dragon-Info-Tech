@@ -47,26 +47,26 @@
 }
 
 //intro header main text position mobile
-  #intro .intro__content{
-    top:25%;
-    left:50%;
-    width: 90%;
-    transform: translateX(-50%) translateY(-40%);
-    position: absolute;
-    z-index: 1000;
+#intro .intro__content{
+  top:25%;
+  left:50%;
+  width: 90%;
+  transform: translateX(-50%) translateY(-40%);
+  position: absolute;
+  z-index: 1000;
 
-    //intro header main text position ipad up
-    @include media-breakpoint-up(md){
-      @include centerer;
-      top:40% !important;
-      left:50% !important;
-    }
-
-    //intro header main text position desktop
-    @media all and (min-width: 1400px) and (max-width: 1920px){
-      left:85% !important;
-    }
+  //intro header main text position ipad up
+  @include media-breakpoint-up(md){
+    @include centerer;
+    top:40% !important;
+    left:50% !important;
   }
+
+  //intro header main text position desktop
+  @media all and (min-width: 1400px) and (max-width: 1920px){
+    left:85% !important;
+  }
+}
 
 //intro header main text edit
 .intro__header{
@@ -709,3 +709,138 @@
 //  transform: translateY(50px);
 //  position: relative;
 //}
+
+//section our-work-hero
+.our-work-hero{
+  height:400px;
+  position: relative;
+  z-index: 100;
+
+  &__bg-image{
+    background: url("{{site.url}}/assets/img/our-work-cardiff.jpg") center center no-repeat;
+    background-size: cover;
+    height:100%;
+  }
+
+  &__content{
+    @include centerer;
+
+    h1{
+      font-size: rem-calc(50px);
+
+      @include media-breakpoint-up(lg){
+        font-size: rem-calc(85px);
+      }
+
+    }
+
+    p{
+      font-size: rem-calc(18px);
+      @include media-breakpoint-up(lg){
+        font-size: rem-calc(35px);
+      }
+    }
+  }
+
+}
+
+.work{
+  height: 100%;
+  position: relative;
+
+  //number eg 01
+  span{
+    font-size:rem-calc(145px);
+    @include centerer;
+    left:50% !important;
+    text-align: center;
+    opacity: 0.1;
+    z-index: -100;
+
+    @media screen and (min-width: 1201px) and (max-width: 1400px) {
+      font-size:rem-calc(500px);
+      left:0% !important;
+    }
+
+    @media screen and (min-width: 1401px) {
+      font-size:rem-calc(700px);
+      left:0% !important;
+    }
+  }
+
+  &__content{
+    //@include centerer;
+    width:90%;
+    top:0;
+    left:50%;
+    transform: translateX(-50%) translateY(-0%);
+    position: relative;
+
+    @include media-breakpoint-up(lg){
+      width:60%;
+    }
+  }
+
+  h2{
+    @extend .main-heading;
+    color: $primary;
+    font-size: rem-calc(45px);
+    margin-bottom:0;
+  }
+
+  p{
+    font-size:rem-calc(30px);
+    @extend .secondary-heading;
+  }
+
+  &--bg-dark{
+    background-color: #2C3240;
+  }
+
+  .work__media {
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    position: relative;
+
+    img {
+
+      @media screen and (min-width: 1201px) and (max-width: 1400px) {
+        @include size(450px);
+      }
+
+      @media screen and (min-width: 1401px) {
+        @include size(650px);
+      }
+
+    }
+  }
+}
+
+.our-work-contact{
+  @extend .secondary-heading;
+  color:#fff;
+  font-size:2.1rem;
+
+  a{
+    color:#fff;
+
+    &:hover{
+      text-decoration: none;
+      color: darken(#fff, 20%)
+    }
+  }
+}
+
+.work__content{
+
+  @include media-breakpoint-down(md){
+    width:90%;
+  }
+
+}
+
+
+
+
